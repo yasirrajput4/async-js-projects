@@ -18,24 +18,24 @@ Each project is a standalone mini app that calls a public API from `freeapi.app`
 ## Project Structure
 
 ```text
-async-projects/
-├─ api-calling/
+async-js-projects/
+├─ random-product-fetcher/
 │  ├─ index.html      # Lists random products from an API
 │  ├─ app.js          # Fetch + render product titles
 │  └─ style.css       # Dark themed list styling
-├─ video-listing/
+├─ youtube-video-explorer/
 │  ├─ index.html      # YouTube-style video listing UI
 │  ├─ app.js          # Fetch + search videos by title
 │  └─ style.css       # Grid layout, cards, loader animation
-├─ random-quote/
+├─ random-quote-generator/
 │  ├─ index.html      # Random quote viewer with buttons
 │  ├─ app.js          # Fetch quote, copy, and share to Twitter
 │  └─ style.css       # Centered quote card and buttons
-├─ joke-project/
+├─ random-joke-generator/
 │  ├─ index.html      # Button to show a random joke card
 │  ├─ app.js          # Fetch jokes, pick one at random on click
 │  └─ style.css       # Card layout and animated hover effects
-├─ books-library/
+├─ books-explorer/
 │  ├─ index.html      # Searchable books gallery
 │  ├─ app.js          # Fetch books and filter by title
 │  └─ style.css       # Responsive grid with book cards
@@ -48,7 +48,7 @@ Each folder can be opened independently in a browser; there is no build step or 
 
 ## Individual Projects
 
-### 1. API Calling (`api-calling`)
+### 1. Random Product Fetcher (`random-product-fetcher`)
 
 - Fetches random products from
   `https://api.freeapi.app/api/v1/public/randomproducts`.
@@ -58,7 +58,7 @@ Each folder can be opened independently in a browser; there is no build step or 
   - Handle asynchronous data loading.
   - Update the DOM dynamically with JavaScript.
 
-### 2. YouTube Video Listing (`video-listing`)
+### 2. YouTube Video Explorer (`youtube-video-explorer`)
 
 - Loads a list of videos from
   `https://api.freeapi.app/api/v1/public/youtube/videos`.
@@ -69,7 +69,7 @@ Each folder can be opened independently in a browser; there is no build step or 
 - Includes a **search box** that filters videos **on the client** by title.
 - Shows a loader while fetching and a friendly message if no results are found.
 
-### 3. Random Quote Generator (`random-quote`)
+### 3. Random Quote Generator (`random-quote-generator`)
 
 - Fetches a random quote from
   `https://api.freeapi.app/api/v1/public/quotes/quote/random`.
@@ -83,7 +83,7 @@ Each folder can be opened independently in a browser; there is no build step or 
   - Clipboard API (`navigator.clipboard`).
   - Opening external URLs from JavaScript.
 
-### 4. Joke Project (`joke-project`)
+### 4. Random Joke Generator (`random-joke-generator`)
 
 - Fetches an array of jokes from
   `https://api.freeapi.app/api/v1/public/randomjokes`.
@@ -93,7 +93,7 @@ Each folder can be opened independently in a browser; there is no build step or 
   - Loading data once and reusing it for multiple interactions.
   - Random selection from an in-memory array.
 
-### 5. Books Library (`books-library`)
+### 5. Books Explorer (`books-explorer`)
 
 - Fetches a list of books from
   `https://api.freeapi.app/api/v1/public/books`.
@@ -112,6 +112,13 @@ Each folder can be opened independently in a browser; there is no build step or 
 
 ## Getting Started
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/yasirrajput4/async-js-projects.git
+cd async-js-projects
+```
+
 ### Prerequisites
 
 - A modern web browser (Chrome, Edge, Firefox, Safari, etc.).
@@ -122,18 +129,18 @@ Each folder can be opened independently in a browser; there is no build step or 
 You can run any project in two simple ways:
 
 - **Directly from the file system**
-  - Open the desired folder (for example `api-calling/`).
+  - Open the desired folder (for example `random-product-fetcher/`).
   - Double-click `index.html` to open it in your browser.
 
 - **Using a local static server (recommended)**
   - Open the root folder in your editor.
   - Start a static server (for example, using a Live Server extension).
   - Navigate to the specific project path, for example:
-    - `/api-calling/index.html`
-    - `/video-listing/index.html`
-    - `/random-quote/index.html`
-    - `/joke-project/index.html`
-    - `/books-library/index.html`
+    - `/random-product-fetcher/index.html`
+    - `/youtube-video-explorer/index.html`
+    - `/random-quote-generator/index.html`
+    - `/random-joke-generator/index.html`
+    - `/books-explorer/index.html`
 
 No additional build tools, bundlers, or package managers are required.
 
