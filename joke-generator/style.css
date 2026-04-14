@@ -1,0 +1,188 @@
+/* ── RESET & BASE ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0d0900;
+  --surface: #191100;
+  --surface-2: #221800;
+  --border: #332200;
+  --accent: #f59e0b;
+  --accent-2: #fbbf24;
+  --accent-dim: rgba(245, 158, 11, 0.1);
+  --accent-glow: rgba(245, 158, 11, 0.2);
+  --text: #fdf4e3;
+  --muted: #907040;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px 80px;
+}
+
+/* ── PAGE WRAPPER ── */
+.page-wrapper {
+  width: min(720px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── BACK LINK ── */
+.back-link {
+  align-self: flex-start;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--accent-2);
+}
+
+/* ── HEADER ── */
+.page-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.header-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  background: var(--accent-dim);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.page-header h1 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.header-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── GET JOKE BUTTON ── */
+#jokebtn {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 14px 36px;
+  background: var(--accent);
+  color: #0d0900;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+#jokebtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.4);
+}
+
+#jokebtn:active {
+  transform: scale(0.98);
+}
+
+/* ── JOKE CONTAINER ── */
+#jokeContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ── JOKE CARD ── */
+.jokeCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 26px;
+  width: min(360px, 100%);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.7;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+  animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  position: relative;
+}
+
+.jokeCard::before {
+  content: "🎭";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4));
+}
+
+.jokeCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px var(--accent-glow);
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .jokeCard {
+    width: 100%;
+  }
+  #jokebtn {
+    width: 100%;
+  }
+}

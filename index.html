@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async JS Projects — Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #0a0a0f;
+        --surface: #111118;
+        --border: #1e1e2a;
+        --text: #f0f0f8;
+        --muted: #7070888;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 0 0 80px;
+      }
+
+      /* ── HEADER ── */
+      .hub-header {
+        text-align: center;
+        padding: 80px 24px 60px;
+        position: relative;
+      }
+
+      .hub-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 60% at 50% 0%,
+          rgba(99, 102, 241, 0.12) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .hub-eyebrow {
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #a5b4fc;
+        background: rgba(99, 102, 241, 0.12);
+        border: 1px solid rgba(99, 102, 241, 0.25);
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 22px;
+      }
+
+      .hub-title {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        margin-bottom: 18px;
+        background: linear-gradient(135deg, #f0f0f8 0%, #a5b4fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hub-subtitle {
+        font-size: 1.05rem;
+        color: #8888aa;
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* ── GRID ── */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ── PROJECT CARD ── */
+      .project-card {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 32px;
+        overflow: hidden;
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+        cursor: pointer;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.28s ease;
+        border-radius: 20px;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
+      }
+
+      /* Per-project accent colors */
+      .card--products {
+        --card-accent: #10b981;
+        --card-glow: rgba(16, 185, 129, 0.12);
+      }
+      .card--youtube {
+        --card-accent: #ef4444;
+        --card-glow: rgba(239, 68, 68, 0.12);
+      }
+      .card--quotes {
+        --card-accent: #8b5cf6;
+        --card-glow: rgba(139, 92, 246, 0.12);
+      }
+      .card--jokes {
+        --card-accent: #f59e0b;
+        --card-glow: rgba(245, 158, 11, 0.12);
+      }
+      .card--books {
+        --card-accent: #f97316;
+        --card-glow: rgba(249, 115, 22, 0.12);
+      }
+
+      .project-card::before {
+        background: radial-gradient(
+          circle at top left,
+          var(--card-glow),
+          transparent 65%
+        );
+      }
+      .project-card:hover {
+        border-color: var(--card-accent);
+        box-shadow: 0 0 30px
+          color-mix(in srgb, var(--card-accent) 15%, transparent);
+      }
+
+      .card-icon {
+        font-size: 2.4rem;
+        margin-bottom: 18px;
+        display: block;
+      }
+
+      .card-number {
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        font-family: "Syne", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--card-accent);
+        opacity: 0.6;
+      }
+
+      .card-title {
+        font-family: "Syne", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+      }
+
+      .card-desc {
+        font-size: 0.875rem;
+        color: #7070a0;
+        line-height: 1.65;
+        margin-bottom: 24px;
+      }
+
+      .card-tag-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .card-tag {
+        font-size: 0.72rem;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+        color: var(--card-accent);
+        border: 1px solid
+          color-mix(in srgb, var(--card-accent) 25%, transparent);
+      }
+
+      .card-arrow {
+        position: absolute;
+        bottom: 28px;
+        right: 28px;
+        font-size: 1rem;
+        color: var(--card-accent);
+        opacity: 0;
+        transform: translateX(-6px);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+      }
+
+      .project-card:hover .card-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* ── FOOTER ── */
+      .hub-footer {
+        text-align: center;
+        margin-top: 64px;
+        font-size: 0.8rem;
+        color: #404060;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 600px) {
+        .hub-header {
+          padding: 60px 20px 44px;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+          padding: 0 16px;
+          gap: 14px;
+        }
+        .project-card {
+          padding: 26px 24px 52px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hub-header">
+      <span class="hub-eyebrow">Vanilla JS · Fetch API · async/await</span>
+      <h1 class="hub-title">Async JS<br />Projects</h1>
+      <p class="hub-subtitle">
+        Five focused mini-apps built with plain HTML, CSS, and JavaScript — each
+        powered by a live public API.
+      </p>
+    </header>
+
+    <main class="projects-grid">
+      <a
+        href="./product-fetcher/index.html"
+        class="project-card card--products"
+      >
+        <span class="card-number">01</span>
+        <span class="card-icon">🛍️</span>
+        <h2 class="card-title">Product Fetcher</h2>
+        <p class="card-desc">
+          Fetches and renders a live list of random products from the freeapi
+          catalog using async/await.
+        </p>
+        <div class="card-tag-row">
+          <span class="card-tag">fetch API</span>
+          <span class="card-tag">DOM rendering</span>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="./video-explorer/index.html" class="project-card card--youtube">
+        <span class="card-number">02</span>
+        <span class="card-icon">🎬</span>
+        <h2 class="card-title">Video Explorer</h2>
+        <p class="card-desc">
+          Browse and search YouTube-style video cards pulled from a public API,
+          with live client-side filtering.
+        </p>
+        <div class="card-tag-row">
+          <span class="card-tag">search filter</span>
+          <span class="card-tag">grid layout</span>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="./quote-generator/index.html" class="project-card card--quotes">
+        <span class="card-number">03</span>
+        <span class="card-icon">💬</span>
+        <h2 class="card-title">Quote Generator</h2>
+        <p class="card-desc">
+          Generates a fresh random quote on demand with copy-to-clipboard and
+          one-click Twitter sharing.
+        </p>
+        <div class="card-tag-row">
+          <span class="card-tag">clipboard API</span>
+          <span class="card-tag">Twitter share</span>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="./joke-generator/index.html" class="project-card card--jokes">
+        <span class="card-number">04</span>
+        <span class="card-icon">😂</span>
+        <h2 class="card-title">Joke Generator</h2>
+        <p class="card-desc">
+          Loads a batch of jokes once, then serves a random one on every button
+          click — no extra API calls.
+        </p>
+        <div class="card-tag-row">
+          <span class="card-tag">random pick</span>
+          <span class="card-tag">in-memory cache</span>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="./books-explorer/index.html" class="project-card card--books">
+        <span class="card-number">05</span>
+        <span class="card-icon">📚</span>
+        <h2 class="card-title">Books Explorer</h2>
+        <p class="card-desc">
+          Discover books with cover images, authors, and publishers — with
+          real-time title search filtering.
+        </p>
+        <div class="card-tag-row">
+          <span class="card-tag">nested JSON</span>
+          <span class="card-tag">responsive grid</span>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+    </main>
+
+    <footer class="hub-footer">
+      <p>
+        Built with Vanilla JS · Data from
+        <a
+          href="https://freeapi.app"
+          style="color: #6366f1; text-decoration: none"
+          >freeapi.app</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

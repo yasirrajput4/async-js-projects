@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Books Explorer</title>
+    <title>Joke Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,26 +14,19 @@
   </head>
   <body>
     <div class="page-wrapper">
+      <a href="../index.html" class="back-link">← Back to Hub</a>
+
       <header class="page-header">
-        <a href="../index.html" class="back-link">← Back to Hub</a>
-        <div class="header-badge">Live API</div>
-        <h1>📚 Books Explorer</h1>
+        <div class="header-badge">Random Jokes</div>
+        <h1>😂 Joke Generator</h1>
         <p class="header-sub">
-          Browse the catalog and search by title in real time.
+          Hit the button. Get a joke. Repeat until you laugh.
         </p>
       </header>
 
-      <div class="search-bar">
-        <input
-          id="query"
-          type="text"
-          placeholder="Search by title..."
-          autocomplete="off"
-        />
-        <button id="searchbtn">Search</button>
-      </div>
+      <button id="jokebtn">🎲 Get a Joke</button>
 
-      <main id="container"></main>
+      <div id="jokeContainer"></div>
     </div>
 
     <script src="./app.js"></script>
