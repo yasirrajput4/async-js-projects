@@ -1,4 +1,4 @@
-## Async JavaScript Projects
+## Asynchronous JavaScript Projects
 
 A collection of five focused mini-apps built with **HTML**, **CSS**, and **vanilla JavaScript** to practice asynchronous programming using the `fetch` API and `async/await`.
 
@@ -140,3 +140,11 @@ npx serve .
 - All data is fetched with the native `fetch` API and `async/await`.
 - Errors are caught and surfaced to the user in each project.
 - No frameworks, no bundlers, no `npm install` required.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
