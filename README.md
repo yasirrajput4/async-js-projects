@@ -4,6 +4,8 @@ A collection of five focused mini-apps built with **HTML**, **CSS**, and **vanil
 
 Each project calls a public API from `freeapi.app` and renders results in the browser. A hub page (`index.html`) links to all five projects from one place.
 
+🔗 **Live Demo:** [async-js-projects.netlify.app](https://async-js-projects.netlify.app/)
+
 ---
 
 ## Tech Stack
@@ -13,6 +15,7 @@ Each project calls a public API from `freeapi.app` and renders results in the br
 - **JavaScript (ES6+)** — `async/await`, `fetch`, DOM manipulation, event handling, and client-side filtering.
 - **Public APIs** — All data loaded from `https://api.freeapi.app`.
 - **Google Fonts** — Syne (headings) + Inter (body) across all projects.
+- **Deployment** — Hosted on **Netlify**.
 
 ---
 
@@ -44,7 +47,7 @@ async-js-projects/
 └─ README.md
 ```
 
-Open `index.html` in the root to navigate all five projects from the hub page.
+Open `index.html` in the root to navigate all five projects from the hub page, or visit the [live demo](https://async-js-projects.netlify.app/) directly.
 
 ---
 
@@ -69,6 +72,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Fetches random products from `https://api.freeapi.app/api/v1/public/randomproducts`.
 - Renders a numbered list of product titles with a left-accent hover animation.
 - Theme: **Emerald green** on deep dark background.
+- 🔗 [Live](https://async-js-projects.netlify.app/product-fetcher/)
 
 ### 2. Video Explorer (`video-explorer`)
 
@@ -77,6 +81,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Includes a search input that filters by title on the client.
 - Shows a spinner while fetching; graceful empty state on no results.
 - Theme: **Crimson red** on near-black background.
+- 🔗 [Live](https://async-js-projects.netlify.app/video-explorer/)
 
 ### 3. Quote Generator (`quote-generator`)
 
@@ -84,6 +89,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Renders quote text and author in a centered card with an italic serif font.
 - Three action buttons: **New Quote**, **Copy to Clipboard**, **Share on X (Twitter)**.
 - Theme: **Violet / indigo** on deep dark background.
+- 🔗 [Live](https://async-js-projects.netlify.app/quote-generator/)
 
 ### 4. Joke Generator (`joke-generator`)
 
@@ -91,6 +97,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Caches all jokes in memory; delivers one at random on each button click.
 - New joke cards pop in with a spring animation.
 - Theme: **Amber / orange** on warm near-black background.
+- 🔗 [Live](https://async-js-projects.netlify.app/joke-generator/)
 
 ### 5. Books Explorer (`books-explorer`)
 
@@ -98,6 +105,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Renders cover image, title, authors, publisher, and published date per card.
 - Real-time title search filter on input.
 - Theme: **Burnt orange** on dark warm background.
+- 🔗 [Live](https://async-js-projects.netlify.app/books-explorer/)
 
 ---
 
@@ -110,7 +118,7 @@ git clone https://github.com/yasirrajput4/async-js-projects.git
 cd async-js-projects
 ```
 
-### Run
+### Run Locally
 
 Open `index.html` from the root in any modern browser — no build step, no installs.
 
@@ -132,6 +140,17 @@ Using a static server (recommended to avoid CORS warnings on some browsers):
 # Or with npx
 npx serve .
 ```
+
+### Deployment
+
+This project is deployed on **Netlify**: [async-js-projects.netlify.app](https://async-js-projects.netlify.app/)
+
+To deploy your own copy:
+
+1. Push the repo to GitHub.
+2. Log in to [Netlify](https://netlify.com) and click **Add new site → Import an existing project**.
+3. Connect your GitHub repo — no build command needed, publish directory is `/` (root).
+4. Deploy. Netlify auto-redeploys on every push to `main`.
 
 ---
 
