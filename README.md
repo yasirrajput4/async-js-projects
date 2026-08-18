@@ -4,7 +4,7 @@ A collection of five focused mini-apps built with **HTML**, **CSS**, and **vanil
 
 Each project calls a public API from `freeapi.app` and renders results in the browser. A hub page (`index.html`) links to all five projects from one place.
 
-🔗 **Live Demo:** [async-js-projects.netlify.app](https://async-js-projects.netlify.app/)
+🔗 **Live Demo:** [async-js-projects.netlify.app](https://async-js-projects.netlify.app)
 
 ---
 
@@ -21,7 +21,7 @@ Each project calls a public API from `freeapi.app` and renders results in the br
 
 ## Project Structure
 
-```text
+```
 async-js-projects/
 ├─ index.html                    # ← Hub page — links to all 5 projects
 ├─ product-fetcher/
@@ -47,21 +47,7 @@ async-js-projects/
 └─ README.md
 ```
 
-Open `index.html` in the root to navigate all five projects from the hub page, or visit the [live demo](https://async-js-projects.netlify.app/) directly.
-
----
-
-## Color Themes
-
-Each project has a dedicated dark color theme matched to its content:
-
-| Project         | Theme Color     | Rationale                       |
-| --------------- | --------------- | ------------------------------- |
-| Product Fetcher | Emerald green   | Commerce, growth, fresh         |
-| Video Explorer  | Crimson red     | YouTube brand association       |
-| Quote Generator | Violet / indigo | Literary, thoughtful, editorial |
-| Joke Generator  | Amber / orange  | Playful, warm, energetic        |
-| Books Explorer  | Burnt orange    | Library warmth, paper, print    |
+Open `index.html` in the root to navigate all five projects from the hub page, or visit the [live demo](https://async-js-projects.netlify.app) directly.
 
 ---
 
@@ -72,7 +58,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Fetches random products from `https://api.freeapi.app/api/v1/public/randomproducts`.
 - Renders a numbered list of product titles with a left-accent hover animation.
 - Theme: **Emerald green** on deep dark background.
-- 🔗 [Live](https://async-js-projects.netlify.app/product-fetcher/)
+- 🔗 [Live](https://async-js-projects.netlify.app/product-fetcher)
 
 ### 2. Video Explorer (`video-explorer`)
 
@@ -81,7 +67,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Includes a search input that filters by title on the client.
 - Shows a spinner while fetching; graceful empty state on no results.
 - Theme: **Crimson red** on near-black background.
-- 🔗 [Live](https://async-js-projects.netlify.app/video-explorer/)
+- 🔗 [Live](https://async-js-projects.netlify.app/video-explorer)
 
 ### 3. Quote Generator (`quote-generator`)
 
@@ -89,7 +75,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Renders quote text and author in a centered card with an italic serif font.
 - Three action buttons: **New Quote**, **Copy to Clipboard**, **Share on X (Twitter)**.
 - Theme: **Violet / indigo** on deep dark background.
-- 🔗 [Live](https://async-js-projects.netlify.app/quote-generator/)
+- 🔗 [Live](https://async-js-projects.netlify.app/quote-generator)
 
 ### 4. Joke Generator (`joke-generator`)
 
@@ -97,7 +83,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Caches all jokes in memory; delivers one at random on each button click.
 - New joke cards pop in with a spring animation.
 - Theme: **Amber / orange** on warm near-black background.
-- 🔗 [Live](https://async-js-projects.netlify.app/joke-generator/)
+- 🔗 [Live](https://async-js-projects.netlify.app/joke-generator)
 
 ### 5. Books Explorer (`books-explorer`)
 
@@ -105,7 +91,7 @@ Each project has a dedicated dark color theme matched to its content:
 - Renders cover image, title, authors, publisher, and published date per card.
 - Real-time title search filter on input.
 - Theme: **Burnt orange** on dark warm background.
-- 🔗 [Live](https://async-js-projects.netlify.app/books-explorer/)
+- 🔗 [Live](https://async-js-projects.netlify.app/books-explorer)
 
 ---
 
@@ -122,28 +108,9 @@ cd async-js-projects
 
 Open `index.html` from the root in any modern browser — no build step, no installs.
 
-```bash
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-
-# Windows
-start index.html
-```
-
-Using a static server (recommended to avoid CORS warnings on some browsers):
-
-```bash
-# With VS Code Live Server — right-click index.html → Open with Live Server
-# Or with npx
-npx serve .
-```
-
 ### Deployment
 
-This project is deployed on **Netlify**: [async-js-projects.netlify.app](https://async-js-projects.netlify.app/)
+This project is deployed on **Netlify**: [async-js-projects.netlify.app](https://async-js-projects.netlify.app)
 
 To deploy your own copy:
 
@@ -159,11 +126,5 @@ To deploy your own copy:
 - All data is fetched with the native `fetch` API and `async/await`.
 - Errors are caught and surfaced to the user in each project.
 - No frameworks, no bundlers, no `npm install` required.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
