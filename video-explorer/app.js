@@ -47,7 +47,7 @@ function displayVideos(videos) {
   });
 }
 
-// 🔍 Filter videos based on title only
+// Filter videos based on title only
 function filterVideos() {
   const searchText = query.value.toLowerCase().trim();
   const filtered = allVideos.filter((v) => {
