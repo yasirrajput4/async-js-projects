@@ -120,11 +120,3 @@ To deploy your own copy:
 4. Deploy. Netlify auto-redeploys on every push to `main`.
 
 ---
-
-## Notes
-
-- All data is fetched with the native `fetch` API and `async/await`.
-- Errors are caught and surfaced to the user in each project.
-- No frameworks, no bundlers, no `npm install` required.
-
----
