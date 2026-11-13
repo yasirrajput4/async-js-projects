@@ -4,7 +4,7 @@ let product = [];
 const fetchData = async () => {
   try {
     const jsonData = await fetch(
-      "https://api.freeapi.app/api/v1/public/randomproducts",
+      "https://prod-main-api-704464-00tre1p1erm.compute.instacloud-edge.com/api/v1/public/randomproducts",
     );
     const response = await jsonData.json();
     const data = response.data.data;

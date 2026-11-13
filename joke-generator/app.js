@@ -5,7 +5,7 @@ let array = [];
 const fetchJokes = async () => {
   try {
     const res = await fetch(
-      "https://api.freeapi.app/api/v1/public/randomjokes",
+      "https://prod-main-api-704464-00tre1p1erm.compute.instacloud-edge.com/api/v1/public/randomjokes",
     );
     const data = await res.json();
     array = data.data.data;

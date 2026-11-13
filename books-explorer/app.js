@@ -5,7 +5,9 @@ let books = [];
 
 const fetchBooks = async () => {
   try {
-    const res = await fetch("https://api.freeapi.app/api/v1/public/books");
+    const res = await fetch(
+      "https://prod-main-api-704464-00tre1p1erm.compute.instacloud-edge.com/api/v1/public/books?page=1&limit=10&inc=kind%2Cid%2Cetag%2CvolumeInfo&query=tech",
+    );
     const data = await res.json();
     books = data.data.data;
     displayBooks(books);

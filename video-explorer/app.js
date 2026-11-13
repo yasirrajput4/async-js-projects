@@ -10,7 +10,7 @@ const fetchVideo = async () => {
 
   try {
     const res = await fetch(
-      "https://api.freeapi.app/api/v1/public/youtube/videos",
+      "https://prod-main-api-704464-00tre1p1erm.compute.instacloud-edge.com/api/v1/public/youtube/videos?page=1&limit=10&query=javascript&sortBy=keep%20one%3A%20mostLiked%20%7C%20mostViewed%20%7C%20latest%20%7C%20oldest",
     );
     const data = await res.json();
     allVideos = data.data.data;

@@ -10,7 +10,7 @@ const fetchQuote = async () => {
   container.innerHTML = `<div class="loader"></div>`;
   try {
     const res = await fetch(
-      "https://api.freeapi.app/api/v1/public/quotes/quote/random",
+      "https://prod-main-api-704464-00tre1p1erm.compute.instacloud-edge.com/api/v1/public/quotes/quote/random",
     );
     const data = await res.json();
 
